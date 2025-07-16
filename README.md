@@ -16,9 +16,8 @@ Aquí encontrarás una colección de **archivos separados**, cada uno con un **p
 
 Los archivos están organizados directamente en la raíz del repositorio, cada uno con su nombre descriptivo, por ejemplo:
 
-- `programacion_avanzada.php`
-- `calculadora_basica.py`
-- `area_triangulo.java`
+- `calculadora_php.php`
+- `contador_de_letras.php`
 - ...
 
 ## 📚 Objetivo
