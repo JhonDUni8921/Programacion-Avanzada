@@ -1,11 +1,13 @@
-function generarFibonacciHasta(n) {
-  let secuencia = [0, 1];
-  while (true) {
-    let siguiente = secuencia[secuencia.length - 1] + secuencia[secuencia.length - 2];
-    if (siguiente > n) break;
-    secuencia.push(siguiente);
+function fibonacciEnIndice(n) {
+  if (n === 0) return 0;
+  if (n === 1) return 1;
+  let a = 0, b = 1;
+  for (let i = 2; i <= n; i++) {
+    let temp = a + b;
+    a = b;
+    b = temp;
   }
-  return secuencia;
+  return b;
 }
 
 const readline = require('readline').createInterface({
@@ -13,9 +15,9 @@ const readline = require('readline').createInterface({
   output: process.stdout
 });
 
-readline.question('Ingresa un número límite para la secuencia de Fibonacci: ', input => {
+readline.question('¿Qué posición de Fibonacci deseas ver? ', input => {
   const n = parseInt(input);
-  const resultado = generarFibonacciHasta(n);
-  console.log('Secuencia de Fibonacci hasta', n + ':', resultado);
+  const resultado = fibonacciEnIndice(n);
+  console.log('Valor en la posición', n + ':', resultado);
   readline.close();
 });
