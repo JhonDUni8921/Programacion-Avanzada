@@ -18,6 +18,7 @@ Los archivos están organizados directamente en la raíz del repositorio, cada u
 
 - `calculadora_php.php`
 - `contador_de_letras.php`
+- `secuencia_fibonacci.js`
 - ...
 
 ## 📚 Objetivo
