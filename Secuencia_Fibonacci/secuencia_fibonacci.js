@@ -1,13 +1,12 @@
-function fibonacciEnIndice(n) {
-  if (n === 0) return 0;
-  if (n === 1) return 1;
-  let a = 0, b = 1;
+function generarSecuenciaFibonacciHastaIndice(n) {
+  if (n === 0) return [0];
+  if (n === 1) return [0, 1];
+  
+  let secuencia = [0, 1];
   for (let i = 2; i <= n; i++) {
-    let temp = a + b;
-    a = b;
-    b = temp;
+    secuencia.push(secuencia[i - 1] + secuencia[i - 2]);
   }
-  return b;
+  return secuencia;
 }
 
 const readline = require('readline').createInterface({
@@ -17,7 +16,9 @@ const readline = require('readline').createInterface({
 
 readline.question('¿Qué posición de Fibonacci deseas ver? ', input => {
   const n = parseInt(input);
-  const resultado = fibonacciEnIndice(n);
+  const secuencia = generarSecuenciaFibonacciHastaIndice(n);
+  const resultado = secuencia[n];
+  console.log('Secuencia completa hasta la posición', n + ':', secuencia);
   console.log('Valor en la posición', n + ':', resultado);
   readline.close();
 });
